@@ -1,0 +1,17 @@
+FROM alpine:latest
+RUN \
+apk add --no-cache build-base && \
+apk add --no-cache coreutils && \
+apk add --no-cache python3 && \
+apk add --no-cache git make musl-dev go && \
+apk add --no-cache mysql-client && \
+apk add --no-cache apache2-utils bash bind-tools busybox-extras curl ethtool \
+        iperf3 iproute2 iputils jq lftp mtr mysql-client \
+        netcat-openbsd net-tools nginx nmap openssh-client openssl \
+	    perl-net-telnet postgresql-client procps rsync socat tcpdump tshark wget && \
+apk add --no-cache docker-cli && \
+mkdir /certs && \
+chmod 700 /certs && \
+mkdir /share	
+
+ 

@@ -1,0 +1,18 @@
+FROM devalpine:latest
+ENV USER=sz
+ENV UID=1000
+ENV GID=100
+ENV HOME=/home/$USER
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "$HOME" \
+    --ingroup "root" \
+    --uid "$UID" \
+    "$USER" && \
+mkdir -p /share && \
+mkdir -p /home/sz
+USER $USER
+WORKDIR $HOME
+
+ 
